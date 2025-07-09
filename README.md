@@ -1,58 +1,51 @@
 # MooveDAO
 
-MooveDAO è un contratto intelligente basato su Ethereum che implementa un'organizzazione autonoma decentralizzata (DAO). Gli utenti possono acquistare azioni della DAO utilizzando token ERC-20 e partecipare al processo decisionale attraverso votazioni su proposte.
+MooveDAO is an Ethereum-based smart contract that implements a decentralized autonomous organization (DAO). Users can purchase shares in the DAO using ERC-20 tokens and participate in the decision-making process by voting on proposals.
 
-## Tecnologie Utilizzate
-- **Solidity**: Linguaggio di programmazione per smart contract su Ethereum.
-- **Hardhat**: Ambiente di sviluppo per testare e distribuire smart contract.
-- **OpenZeppelin**: Libreria per contratti sicuri e standardizzati.
-- **TypeScript**: Per scrivere test più robusti e leggibili.
-- **Chai**: Libreria di asserzioni per i test.
+## Technologies Used
+- **Solidity**: Programming language for smart contracts on Ethereum.
+- **Hardhat**: Development environment for testing and deploying smart contracts.
+- **OpenZeppelin**: Library for secure and standardized contracts.
+- **TypeScript**: For writing more robust and readable tests.
+- **Chai**: Assertion library for testing.
 
-## Funzionalità Principali
-### 1. Acquisto di Azioni
-Gli utenti possono acquistare azioni della DAO utilizzando un token ERC-20. Il prezzo per azione è fisso e definito nel contratto.
+## Main Features
+### 1. Purchase of Shares
+Users can purchase shares in the DAO using an ERC-20 token. The price per share is fixed and defined in the contract.
 
-### 2. Creazione di Proposte
-Solo i membri della DAO (chi possiede azioni) possono creare proposte per migliorare il progetto.
+### 2. Creating Proposals
+Only DAO members (those who own shares) can create proposals to improve the project.
 
-### 3. Votazione sulle Proposte
-I membri possono votare sulle proposte in base al numero di azioni possedute. È possibile anche delegare il voto ad altri membri.
+### 3. Voting on Proposals
+Members can vote on proposals based on the number of shares they own. They can also delegate voting to other members.
 
-### 4. Esecuzione delle Proposte
-Se una proposta ottiene più voti favorevoli che contrari, viene approvata ed eseguita.
+### 4. Executing Proposals
+If a proposal receives more votes in favor than against, it is approved and executed.
 
-### 5. Interruzione della Vendita
-Il proprietario del contratto può interrompere la vendita delle azioni in qualsiasi momento.
+### 5. Stopping the Sale
+The contract owner can stop the sale of shares at any time.
 
-## Installazione
-Assicurati di avere [Node.js](https://nodejs.org/) e [Hardhat](https://hardhat.org/) installati.
+## Installation
+Make sure you have [Node.js](https://nodejs.org/) and [Hardhat](https://hardhat.org/) installed.
 
-1. Clona il repository:
-   ```bash
-   git clone https://github.com/tuo-username/MooveDAO.git
-   cd MooveDAO
-   ```
-2. Installa le dipendenze:
-   ```bash
-   npm install
-   ```
+1. Clone the repository:
+```bash
+git clone https://github.com/your-username/MooveDAO.git
+cd MooveDAO
+```
+2. Install the dependencies:
+```bash
+npm install
+```
 
 ## Testing
-Per eseguire i test, usa il comando:
+To run the tests, use the command:
 ```bash
 npx hardhat test
 ```
 
-## Distribuzione
-Puoi distribuire il contratto su una blockchain Ethereum o una testnet come segue:
+## Deployment
+You can deploy the contract on an Ethereum blockchain or a testnet as follows:
 ```bash
 npx hardhat run scripts/deploy.ts --network rinkeby
 ```
-
-## Autori
-- **Nome Cognome** - [GitHub](https://github.com/tuo-username)
-
-## Licenza
-Questo progetto è distribuito sotto la licenza MIT.
-
