@@ -34,7 +34,7 @@ contract MooveDAO is Ownable {
 
 
     function buyShares(uint256 amount) external {
-        require(saleActive, "La vendita di azioni e' terminata");
+        require(saleActive, "The sale of shares has ended");
         uint256 cost = amount * sharePrice;
         
         require(daoToken.transferFrom(msg.sender, address(this), cost), "Transfer failed");
@@ -49,7 +49,7 @@ contract MooveDAO is Ownable {
     }
 
     function createProposal(string memory description) external {
-        require(shares[msg.sender] > 0, "Devi possedere azioni per proporre");
+        require(shares[msg.sender] > 0, "You must own shares to propose");
 
         proposals.push();
         uint256 proposalId = proposals.length - 1;
@@ -58,8 +58,8 @@ contract MooveDAO is Ownable {
 
 
     function delegateVote(address delegatee) external {
-        require(shares[msg.sender] > 0, "Devi possedere azioni per delegare");
-        require(delegatee != msg.sender, "Non puoi delegare a te stesso");
+        require(shares[msg.sender] > 0, "You must own shares to delegate");
+        require(delegatee != msg.sender, "You can't delegate to yourself");
 
         delegation[msg.sender] = delegatee;
         delegators[delegatee].push(msg.sender);
@@ -68,7 +68,7 @@ contract MooveDAO is Ownable {
     function vote(uint256 proposalId, bool support) external {
         Proposal storage proposal = proposals[proposalId];
 
-        require(!proposal.hasVoted[msg.sender], "Hai gia' votato");
+        require(!proposal.hasVoted[msg.sender], "You have already voted");
 
         uint256 votingPower = shares[msg.sender];
 
@@ -80,7 +80,7 @@ contract MooveDAO is Ownable {
              }
         }
 
-        require(votingPower > 0, "Nessun potere di voto");
+        require(votingPower > 0, "No voting power");
 
         if (support) {
             proposal.votesFor += votingPower;
@@ -98,8 +98,8 @@ contract MooveDAO is Ownable {
         Proposal storage proposal = proposals[proposalId];
 
     
-        require(!proposal.executed, "Proposta gia' eseguita");
-        require(proposal.votesFor > proposal.votesAgainst, "Proposta non approvata");
+        require(!proposal.executed, "Proposal already executed");
+        require(proposal.votesFor > proposal.votesAgainst, "Proposal not approved");
 
         proposal.executed = true;
     }
