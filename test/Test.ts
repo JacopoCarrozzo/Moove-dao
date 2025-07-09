@@ -188,7 +188,7 @@ describe("MooveDAO Contract", function(){
     
         await expect(
             mooveDAO.connect(addr3).vote(0, true)
-        ).to.be.revertedWith("Nessun potere di voto");
+        ).to.be.revertedWith("No voting power");
     });
     
 })
