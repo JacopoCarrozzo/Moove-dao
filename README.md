@@ -30,7 +30,7 @@ Make sure you have [Node.js](https://nodejs.org/) and [Hardhat](https://hardhat.
 
 1. Clone the repository:
 ```bash
-git clone https://github.com/your-username/MooveDAO.git
+git clone [https://github.com/your-username/MooveDAO.git](https://github.com/JacopoCarrozzo/Moove-dao)
 cd MooveDAO
 ```
 2. Install the dependencies:
